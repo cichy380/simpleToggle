@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <title>Simple Toggle - jQuery plugin</title>
+    <meta name="description" content="Example of using .simpleToggle() plugin.">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="css/docs.css">-->
+    <!--<link rel="stylesheet" href="css/pygments-manni.css">-->
+    <style>
+        .bg-blue {background-color: #d9edf7; }
+    </style>
+</head>
+<body>
+<header class="banner">
+    <nav class="navbar navbar-static-top navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">.simpleToggle() <small>/demo</small></a>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="https://github.com/cichy380/simpleToggle">
+                        <span class="hidden-xs">Simple Toggle on </span>Github
+                    </a>
+                </li>
+                <li><a href="https://github.com/cichy380/simpleToggle/archive/master.zip">Download</a></li>
+                <li><a href="mailto:marcin.dobroszek@gmail.com">Email me</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+  
+<div class="wrap container" role="document">
+    <div class="content row">
+        <main class="main col-sm-12" role="main">
+
+            <h2 id="examples">Examples</h2>
+            <hr>
+
+            <div class="clearfix">
+                <!--example #1-->
+                <h3>no params</h3>
+                <p>Hide clicked element.</p>
+
+                <div class="bs-example">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <button type="button"
+                                    class="btn btn-default btn-lg toggle">click me</button>
+                        </div>
+                    </div>
+                </div>
+
+                <figure class="highlight"><pre><code class="language-html" style="padding-right: 0" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span>
+        <span class="na">class=</span><span class="s">"btn btn-default btn-lg <strong>toggle</strong>"</span><span class="nt">&gt;</span>click me<span class="nt">&lt;/button&gt;</span></code></pre></figure>
+                <!--/example #1-->
+            </div>
+            <div class="clearfix">
+                <!--example #2-->
+                <h3>classname</h3>
+                <p>Add or remove one or more classes from clicked element, depending on either the class's presence.</p>
+
+                <div class="bs-example">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <button type="button"
+                                    class="btn btn-default btn-lg toggle"
+                                    data-toggle-classname="btn-primary">click me 2 times or more</button>
+                        </div>
+                    </div>
+                </div>
+
+                <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span>
+        <span class="na">class=</span><span class="s">"btn btn-default btn-lg <strong>toggle</strong>"</span>
+        <strong><span class="na">data-toggle-classname=</span><span class="s">"btn-primary"</span></strong><span class="nt">&gt;</span>click me 2 times or more<span class="nt">&lt;/button&gt;</span></code></pre></figure>
+                <!--/example #2-->
+            </div>
+
+            <div class="clearfix">
+                <!--example #3-->
+                <h3>target</h3>
+                <p>Display or hide target element.</p>
+
+                <div class="bs-example">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <button type="button"
+                                    class="btn btn-default btn-lg toggle"
+                                    data-toggle-target=".target-example-3">click me 2 times or more</button>
+
+                            <button type="button" disabled="disabled"
+                                    class="btn btn-default btn-lg target-example-3">
+                                I am disabled, but I can disappear
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span>
+        <span class="na">class=</span><span class="s">"btn btn-default btn-lg <strong>toggle</strong>"</span>
+        <strong><span class="na">data-toggle-target=</span><span class="s">".target-example-3"</span></strong><span class="nt">&gt;</span>click me 2 times or more<span class="nt">&lt;/button&gt;</span>
+
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">disabled=</span><span class="s">"disabled"</span>
+        <span class="na">class=</span><span class="s">"btn btn-default btn-lg <strong>target-example-3</strong>"</span><span class="nt">&gt;</span>I am disabled, but I can disappear<span class="nt">&lt;/button&gt;</span></code></pre></figure>
+                <!--/example #3-->
+            </div>
+
+            <div class="clearfix">
+                <!--example #4-->
+                <h3>classname &amp; target</h3>
+                <p>Add or remove one or more classes from target element.</p>
+
+                <div class="bs-example">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <button type="button"
+                                    class="btn btn-default btn-lg toggle"
+                                    data-toggle-target=".target-example-4"
+                                    data-toggle-classname="btn-primary">click me 2 times or more</button>
+
+                            <button type="button" disabled="disabled"
+                                    class="btn btn-default btn-lg target-example-4">
+                                I am disabled, but I can change myself
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span>
+        <span class="na">class=</span><span class="s">"btn btn-default btn-lg <strong>toggle</strong>"</span>
+        <strong><span class="na">data-toggle-target=</span><span class="s">".target-example-4"</span></strong>
+        <strong><span class="na">data-toggle-classname=</span><span class="s">"btn-primary"</span></strong><span class="nt">&gt;</span>click me 2 times or more<span class="nt">&lt;/button&gt;</span>
+
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">disabled=</span><span class="s">"disabled"</span>
+        <span class="na">class=</span><span class="s">"btn btn-default btn-lg <strong>target-example-4</strong>"</span><span class="nt">&gt;</span>I am disabled, but I can change myself<span class="nt">&lt;/button&gt;</span></code></pre></figure>
+                <!--/example #4-->
+            </div>
+
+            <div class="clearfix">
+                <!--example #5-->
+                <h3>JSON syntax</h3>
+                <p>Previous example in concise format.</p>
+
+                <div class="bs-example">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <button type="button"
+                                    class="btn btn-default btn-lg toggle"
+                                    data-toggle='{"target":".nbe5", "classname":"btn-primary"}'>
+                                click me 2 times or more
+                            </button>
+
+                            <button type="button"
+                                    class="btn btn-default btn-lg nbe5"
+                                    disabled="disabled">I am disabled, but I can change myself</button>
+                        </div>
+                    </div>
+                </div>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html" style="padding-right: 0"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span>
+        <span class="na">class=</span><span class="s">"btn btn-default btn-lg <strong>toggle</strong>"</span>
+        <strong><span class="na">data-toggle=</span><span class="s">'{"target":".nbe5", "classname":"btn-primary"}'</span></strong><span class="nt">&gt;</span>click me 2 times or more<span class="nt">&lt;/button&gt;</span>
+
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span>
+        <span class="na">class=</span><span class="s">"btn btn-default btn-lg <strong>nbe5</strong>"</span>
+        <span class="na">disabled=</span><span class="s">"disabled"</span><span class="nt">&gt;</span>I am disabled, but I can change myself<span class="nt">&lt;/button&gt;</span></code></pre></figure>
+
+                <div class="bs-callout bs-callout-danger">
+                    <h4>Syntax</h4>
+                    <p>
+                        Parameter given in <code>data-toggle</code> attribute must have always
+                        <a href="https://www.w3schools.com/js/js_json_syntax.asp">JSON syntax</a>.
+                    </p>
+                </div>
+                <!--/example #5-->
+            </div>
+            <div class="clearfix">
+                <!--example #6-->
+                <h3>multi target</h3>
+                <p>Thanks to JSON format and <code>items</code> property it is possible to change any number of targets.</p>
+
+                <div class="bs-example">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <button type="button"
+                                    class="btn btn-default btn-lg toggle"
+                                    data-toggle='{
+                                    "items": [
+                                        {
+                                            "target":".target-example-6-no-1",
+                                            "classname":"btn-info"
+                                        },
+                                        {
+                                            "target":".target-example-6-no-2"
+                                        }
+                                    ]
+                                }'>click me 2 times or more</button>
+
+                            <button type="button"
+                                    class="btn btn-default btn-lg target-example-6-no-1"
+                                    disabled="disabled">I can change myself</button>
+
+                            <button type="button"
+                                    class="btn btn-default btn-lg target-example-6-no-2"
+                                    disabled="disabled">I can disappear</button>
+                        </div>
+                    </div>
+                </div>
+
+                <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span>
+        <span class="na">class=</span><span class="s">"btn btn-default btn-lg <strong>toggle</strong>"</span>
+        <strong><span class="na">data-toggle=</span><span class="s">'{
+            "items": [
+                {
+                    "target":".target-example-6-no-1",
+                    "classname":"btn-info"
+                },
+                {
+                    "target":".target-example-6-no-2"
+                }
+            ]
+        }'</span></strong><span class="nt">&gt;</span>click me 2 times or more<span class="nt">&lt;/button&gt;</span>
+
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span>
+        <span class="na">class=</span><span class="s">"btn btn-default btn-lg <strong>target-example-6-no-1</strong>"</span>
+        <span class="na">disabled=</span><span class="s">"disabled"</span><span class="nt">&gt;</span>I can change myself<span class="nt">&lt;/button&gt;</span>
+
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span>
+        <span class="na">class=</span><span class="s">"btn btn-default btn-lg <strong>target-example-6-no-2</strong>"</span>
+        <span class="na">disabled=</span><span class="s">"disabled"</span><span class="nt">&gt;</span>I can disappear<span class="nt">&lt;/button&gt;</span></code></pre></figure>
+                <!--/example #6-->
+            </div>
+
+            <div class="clearfix">
+                <!--example #7-->
+                <h3>parent</h3>
+                <p>Set target on the parent of clicked element.</p>
+
+                <div class="bs-example">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <button type="button"
+                                    class="btn btn-default btn-lg toggle"
+                                    data-toggle='{"target":"parent", "classname":"bg-blue"}'>click me 2 times or more</button>
+                        </div>
+                    </div>
+                </div>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html" style="padding-right: 0"><span class="nt">&lt;div class="panel-body"&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span>
+        <span class="na">class=</span><span class="s">"btn btn-default btn-lg <strong>toggle</strong>"</span>
+        <strong><span class="na">data-toggle=</span><span class="s">'{"target":"parent", "classname":"bg-blue"}'</span></strong><span class="nt">&gt;</span>click me 2 times or more<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></figure>
+                <!--/example #7-->
+            </div>
+            <div class="clearfix">
+                <!--example #8-->
+                    <!--coming soon...-->
+                <!--/example #8-->
+            </div>
+        </main>
+    </div>
+
+</div>
+
+<footer class="content-info">
+    <div class="container">
+        <hr>
+        <small>&copy; <a href="http://github.com/cichy380" title="GitHub" style="color: inherit">Marcin</a> 2017</small>
+        <hr>
+    </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="../jquery.simpleToggle.js"></script>
+<script>
+    // initialize examples
+    $('.toggle').simpleToggle();
+</script>
+</body>
+</html>
